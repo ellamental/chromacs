@@ -1,0 +1,31 @@
+{
+  "manifest_version": 2,
+
+  "name": "Chromacs",
+  "author": "Nick Zarczynski",
+  "description": "Emacs-style keybindings and other stuff for Chrome.",
+  "version": "0.1",
+  "permissions": ["tabs"],
+  "icons" : {
+    "16": "icons/icon_16.png",
+    "48": "icons/icon_48.png",
+    "128": "icons/icon_128.png"
+  },
+  "commands": {
+    "_execute_browser_action": {
+      "suggested_key": {
+        "default": "MacCtrl+N",
+        "mac": "MacCtrl+N"
+      },
+      "description": "Toggle feature foo"
+    }
+  },
+  // Add Chromacs to every page context
+  "content_scripts": [{
+    "matches": ["<all_urls>"],
+    "css": ["style.css"],
+    "js": ["script.js"],
+    "run_at": "document_end"
+  }]
+
+}
