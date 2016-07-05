@@ -42,6 +42,19 @@ function chromacs_close_tab() {
 }
 
 
+// TODO(nick): Still not sure how to get the find bar.
+//
+// function chromacs_open_find() {
+//   chrome.windows.getLastFocused(
+//     {populate: true},
+//     function (window) {
+//       console.log('window: ', window);
+//       console.log('window.gFindBar: ', window.gFindBar);
+//     }
+//   );
+// }
+
+
 chrome.commands.onCommand.addListener(function (command) {
   if (command === 'prev-tab') {
     chromacs_prev_tab();
@@ -52,16 +65,19 @@ chrome.commands.onCommand.addListener(function (command) {
   else if (command === 'close-tab') {
     chromacs_close_tab();
   }
+  // else if (command === 'open-find') {
+  //   chromacs_open_find();
+  // }
 });
 
 
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
-    console.log('sender: ', sender);
-    console.log();
-    console.log('request: ', request);
-    console.log();
-    console.log();
+    // console.log('sender: ', sender);
+    // console.log();
+    // console.log('request: ', request);
+    // console.log();
+    // console.log();
     if (request.greeting == "Hello") {
       console.log('request.greeting == hello: ', request.greeting);
       sendResponse('hello');
