@@ -15,6 +15,9 @@
     },
     "next-tab": {
       "description": "Select the next tab."
+    },
+    "disable-save-as": {
+      "description": "A no-op to disable the save-as dialog."
     }
   },
   "background": {
