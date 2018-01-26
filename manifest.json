@@ -8,21 +8,32 @@
   "permissions": ["tabs"],
   "commands": {
     "close-tab": {
-      "description": "Close current tab"
+      "description": "Close current tab",
+      "suggested_key": {
+        "default": "MacCtrl+W"
+      }
     },
     "prev-tab": {
-      "description": "Select the previous tab."
+      "description": "Select the previous tab.",
+      "suggested_key": {
+        "default": "MacCtrl+Comma"
+      }
     },
     "next-tab": {
-      "description": "Select the next tab."
+      "description": "Select the next tab.",
+      "suggested_key": {
+        "default": "MacCtrl+Period"
+      }
     },
     "disable-save-as": {
-      "description": "A no-op to disable the save-as dialog."
+      "description": "A no-op to disable the save-as dialog.",
+      "suggested_key": {
+        "default": "MacCtrl+S"
+      }
     }
   },
   "background": {
-    "scripts": ["background.js"],
-    "persistant": false
+    "scripts": ["background.js"]
   },
   "content_scripts": [{
     "matches": ["<all_urls>"],
